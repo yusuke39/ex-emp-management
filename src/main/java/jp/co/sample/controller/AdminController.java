@@ -49,5 +49,15 @@ public class AdminController {
 		service.registerAdmin(admin);
 		return "administrator/login";
 	}
+	
+	
+	@RequestMapping("/login")
+	public String login(AdminForm form) {
+		Admin admin = new Admin();
+		admin.setMailAddress(form.getMailAddress());
+		admin.setPassword(form.getPassword());
+		service.loginAdmin(admin);
+		return "employee/list";
+	}
 
 }

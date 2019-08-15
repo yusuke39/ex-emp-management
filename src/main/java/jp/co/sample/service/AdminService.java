@@ -29,5 +29,14 @@ public class AdminService {
 	public void registerAdmin(Admin admin) {
 		repository.insert(admin);
 	}
+	
+	/**
+	 * 管理者がメールアドレスとパスワードを使ってログインする.
+	 * 
+	 * @param admin
+	 */
+	public void loginAdmin(Admin admin) {
+		repository.load(admin);
+	}
 
 }
