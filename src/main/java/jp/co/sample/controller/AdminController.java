@@ -45,8 +45,9 @@ public class AdminController {
 		admin.setName(form.getName());
 		admin.setMailAddress(form.getMailAddress());
 		admin.setPassword(form.getPassword());
+		System.out.println(admin);
 		service.registerAdmin(admin);
-		return "administrator/insert";
+		return "administrator/login";
 	}
 
 }

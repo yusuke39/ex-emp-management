@@ -26,9 +26,9 @@ public class AdminRepository {
 	 * @param admin
 	 */
 	public void insert(Admin admin) {
-		String sql = "INSERT INTO administrators(name, mail_address, password) VALUES(name = :name, mail_address = :mailAdderess, password = :password)";
+		String sql = "INSERT INTO administrators(name, mail_address, password) VALUES(:name, :mailAddress,:password);";
 		
-		SqlParameterSource param = new MapSqlParameterSource().addValue("name", admin).addValue("mailAddress", admin).addValue("password", admin);
+		SqlParameterSource param = new MapSqlParameterSource().addValue("name", admin.getName()).addValue("mailAddress", admin.getMailAddress()).addValue("password", admin.getPassword());
 		
 		template.update(sql, param);
 		

@@ -31,7 +31,7 @@
 
 <!-- ここにモックのform要素を貼り付けます -->
 
-					<form method="post" action="login.html">
+					<form method="post" th:action="@{/registerAdmin}" th:object="${adminForm}">
 						<fieldset>
 							<legend>管理者登録<br>(システムにログインできる管理者を登録します)</legend>
 							<!-- 氏名 -->
